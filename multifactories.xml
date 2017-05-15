@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.5" type="plugin" group="jshoppingadmin" method="upgrade">
+	<name>plg_authentication_multifactories</name>
+	<author>3rdp</author>
+	<creationDate>2017-5-15</creationDate>
+	<copyright>Created by 3rdp with generator-joomla3 by @diarcastro</copyright>
+	<license>MIT</license>
+	<authorEmail>ing.diegocastro@gmail.com</authorEmail>
+	<authorUrl></authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_AUTHENTICATION_MULTIFACTORIES_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="multifactories">multifactories.php</filename>
+		<folder>fields</folder>
+		<folder>language</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_authentication_multifactories.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_authentication_multifactories.sys.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.plg_authentication_multifactories.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.plg_authentication_multifactories.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/plugins/jshoppingadmin/multifactories/fields">
+				
+			</fieldset>
+		</fields>
+	</config>
+</extension>
