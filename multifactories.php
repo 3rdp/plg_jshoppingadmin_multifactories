@@ -31,9 +31,8 @@ class plgJshoppingAdminMultifactories extends JPlugin{
         ?> <li><a href="#hello" data-toggle="tab">Lol</a></li> <?php
     }
     function onDisplayProductEditTabsEnd() {
-        ?> <div id="hello" class="tab-pane "><table><?php
-        $this->getHtmlFactories();
-        ?></table></div> <?php
+        $factories = $this->getHtmlFactories();
+        include "fields/form.tpl";
     }
     private function getHtmlFactories() {
         $db = JFactory::getDbo();
@@ -43,12 +42,6 @@ class plgJshoppingAdminMultifactories extends JPlugin{
         $result = $db->loadObjectList();
         // var_dump($result);
         // var_dump($dbname);
-        foreach ($result as $factory) {
-?>
-<tr>
-        <input class="inputbox wide" type="text" placeholder="<?=$factory->alias?>" />
-</tr>
-<?php
-        }
+        return $result;
     }
 }
