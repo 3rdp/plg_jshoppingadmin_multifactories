@@ -37,7 +37,10 @@ class plgJshoppingAdminMultifactories extends JPlugin{
     private function getFactories() {
         $db = JFactory::getDbo();
         $dbname = $db->quoteName('#__multifactories_crudfactories');
-        $query = "SELECT * FROM $dbname";
+        $product_id = 20;
+        $query = "SELECT * FROM " . $db->quoteName('#__multifactories_crudfactories') . " crud " .
+            "LEFT JOIN " . $db->quoteName('#__multifactories_prices') . " prices " . 
+            "ON prices.factory_id = crud.id AND prices.product_id = $product_id";
         $db->setQuery($query);
         $result = $db->loadObjectList();
         return $result;

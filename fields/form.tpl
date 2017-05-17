@@ -1,9 +1,9 @@
 <div id="hello" class="tab-pane">
 	<table>
     <?php foreach ($factories as $factory) { ?>
-		<tr data-alias="<?=$factory->alias?>">
+		<tr data-id="<?=$factory->id?>" data-alias="<?=$factory->alias?>" >
 			<td>
-		    <input class="inputbox wide" type="text" placeholder="<?=$factory->alias?>">
+		    <input class="inputbox wide" type="text" value="<?=$factory->price?>" placeholder="<?=$factory->alias?>">
 		  </td>
 		</tr>
 		<?php }	?>
