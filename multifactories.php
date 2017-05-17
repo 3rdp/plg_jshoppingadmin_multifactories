@@ -31,17 +31,15 @@ class plgJshoppingAdminMultifactories extends JPlugin{
         ?> <li><a href="#hello" data-toggle="tab">Lol</a></li> <?php
     }
     function onDisplayProductEditTabsEnd() {
-        $factories = $this->getHtmlFactories();
+        $factories = $this->getFactories();
         include "fields/form.tpl";
     }
-    private function getHtmlFactories() {
+    private function getFactories() {
         $db = JFactory::getDbo();
         $dbname = $db->quoteName('#__multifactories_crudfactories');
         $query = "SELECT * FROM $dbname";
         $db->setQuery($query);
         $result = $db->loadObjectList();
-        // var_dump($result);
-        // var_dump($dbname);
         return $result;
     }
 }
